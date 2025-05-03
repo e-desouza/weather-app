@@ -13,6 +13,7 @@ A React TypeScript application with a dark theme that displays weather informati
 - High-quality animated weather icons using Lottie animations
 - Comprehensive error handling and logging
 - API health checks and validation
+- Test coverage for components and services
 
 ## Setup and Installation
 
@@ -67,6 +68,39 @@ The application includes a comprehensive logging system that:
 - Timestamps all log entries
 - Can be extended to connect with external monitoring systems
 
+## Testing
+
+The application has comprehensive test coverage using Jest and React Testing Library:
+
+### Component Tests
+
+- Tests for all UI components under normal and error conditions
+- Tests for component interactions and user events
+- Tests for different prop and state combinations
+
+### Service Tests
+
+- Tests for API service functions with mocked responses
+- Tests for error handling and edge cases
+- Tests for data transformation logic
+
+### Utility Tests
+
+- Tests for logging functionality
+- Tests for API health check system
+
+To run the tests:
+
+```
+npm test
+```
+
+To run tests with coverage report:
+
+```
+npm test -- --coverage
+```
+
 ## Technologies Used
 
 - React 18
@@ -75,6 +109,7 @@ The application includes a comprehensive logging system that:
 - Axios for API requests
 - OpenWeatherMap API for weather data
 - Lottie for high-quality weather animations
+- Jest and React Testing Library for testing
 
 ## Project Structure
 
@@ -83,13 +118,16 @@ src/
 ├── components/
 │   ├── SearchBar.tsx     # Search bar component with city search and geolocation
 │   └── WeatherDisplay.tsx # Weather display component showing current and forecast
+│   └── __tests__/             # Component tests
 ├── services/
 │   ├── weatherService.ts # Service to fetch weather data from OpenWeatherMap
 │   ├── healthCheck.ts    # API health checking and validation
-│   └── logger.ts         # Logging utility with multiple severity levels
+│   ├── logger.ts         # Logging utility with multiple severity levels
+│   └── __tests__/             # Service tests
 ├── styles/
 │   ├── theme.ts          # Theme definitions and global styles
 │   └── styled.d.ts       # Type definitions for styled-components
+├── __tests__/                 # App-level tests
 ├── App.tsx               # Main application component
 └── index.tsx             # Entry point
 ```
